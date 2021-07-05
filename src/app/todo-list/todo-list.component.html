@@ -1,0 +1,9 @@
+<div id="myDIV" class="header">
+  <h2>My To Do List</h2>
+  <input type="text" id="myInput"  [(ngModel)]="someInput" name="someInput">
+  <span (click)="additem(someInput)" class="addBtn">Add</span>
+</div>
+
+<ul id="myUL" >
+  <li *ngFor="let items of toDoListArray" [ngClass]="{'checked': items.complete}" > <span (click)="complete(items)">{{items.title}}</span>  <span class="edit" (click)="editTodo(items)">edit</span><span class="close" (click)="delete(items)">X</span></li>
+</ul>
